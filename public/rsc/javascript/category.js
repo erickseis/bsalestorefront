@@ -6,7 +6,7 @@ const aplication = document.querySelector('#container-category')
 const getCategory = async () => {
     try {
         const result = await axios.get(
-            'https://bsale-erickseis.vercel.app/api/v1/category');
+            'https://bsale-erickseis.vercel.app/api/v1/categories');
 
         const viewData = result.data
         let table = ``;
