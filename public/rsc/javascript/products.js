@@ -1,7 +1,7 @@
 import axios from 'axios';
 const aplication = document.querySelector('#container-podruct');
-const aplications = document.querySelector('#container-category');
-
+// const aplications = document.querySelector('#container-category');
+var evento = document.getElementById('evento');
 
 
 const getProduct = async () => {
@@ -13,7 +13,7 @@ const getProduct = async () => {
     const viewData = result.data;
     console.log(viewData)
     let cards = ``;
-    viewData.forEach((producCard, indx) => {
+    await viewData.forEach((producCard, indx) => {
       cards += `
       
         <div class="card">
@@ -41,11 +41,6 @@ const getProduct = async () => {
 };
 
 
-let getData = function (indx) {
-  let x = indx
-  return console.log(x)
-}
-
 const getCategory = async () => {
   try {
     const result = await axios.get(
@@ -53,29 +48,68 @@ const getCategory = async () => {
 
     const viewData = result.data
 
-
     let table = ``;
-    viewData.forEach((category, indx) => {
+
+     viewData.forEach((category) => {
       table += `
-    <div  onclick="alert(${getData(indx)})" >
-    <li class="list-group-item"  > 
-  ${category.name}
-  </li></div>
-    `
+
+         <div >
+       <li  key="${category.id}" onclick='categoryClicked(${category.id})' class="list-group-item"  > 
+       ${category.name}
+       </li></div>
+       `
 
     });
-    aplications.innerHTML =
-      `<div class="category">
-    <ul class="list-group"">${table}</ul>
-    </div>
-    `
+    evento.innerHTML =table;
+
+function categoryClicked (id){
+  console.log(id, tipeof(id))
+}
 
   } catch (error) {
     console.log(error);
   }
 };
-// document.getElementById("hi").click = alert("holaaaaaacjndicdi")
 getCategory();
 getProduct();
+
+
+
+    //   let table = ``;
+    //   await viewData.forEach((category, indx) => {
+    //     table += `
+    //   <div >
+    //   <li id="lo"  key="${indx}"  class="list-group-item"  > 
+    // ${category.name}
+    // </li></div>
+    //   `
+
+    //   });
+    //   aplications.innerHTML =
+    //     `<div class="category">
+    //   <ul class="list-group"">${table}</ul>
+    //   </div>
+    //   `
+
+
+
+// const h = document.getElementById("lo")
+// h.addEventListener("click", () => {
+//   alert("hola mundo")
+// })
+
+
+// const buttonRight = document.querySelector('#lo');
+// buttonRight.addEventListener('click', e => {
+//   alert("hello");
+// }
+// );
+// const event = function (indx) {
+
+//   console.log(indx)
+// }
+
+
+
 
 // onclick='console.log(${category.id})
