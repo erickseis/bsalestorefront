@@ -7,7 +7,7 @@ const aplications = document.querySelector('#container-category');
 const getProduct = async () => {
   try {
     const result = await axios.get(
-      `https://bsale-erickseis.vercel.app/api/v1/products`
+      `https://bsale-erickseis.vercel.app/api/v1/products/` // ${i} valor dinamico?
 
     );
     const viewData = result.data;
