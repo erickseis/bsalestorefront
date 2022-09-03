@@ -8,6 +8,7 @@ const getProduct = async () => {
   try {
     const result = await axios.get(
       `https://bsale-erickseis.vercel.app/api/v1/products`
+
     );
     const viewData = result.data;
     console.log(viewData)
