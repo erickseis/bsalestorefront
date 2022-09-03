@@ -1,12 +1,14 @@
 import axios from 'axios';
 const aplication = document.querySelector('#container-podruct');
+const aplications = document.querySelector('#container-category');
+
+
 
 const getProduct = async () => {
   try {
     const result = await axios.get(
-      'https://bsale-erickseis.vercel.app/api/v1/product'
+      `https://bsale-erickseis.vercel.app/api/v1/products`
     );
-
     const viewData = result.data;
     console.log(viewData)
     let cards = ``;
@@ -37,4 +39,42 @@ const getProduct = async () => {
   }
 };
 
+
+let getData = function (indx) {
+  let x = indx
+  return console.log(x)
+}
+
+const getCategory = async () => {
+  try {
+    const result = await axios.get(
+      `https://bsale-erickseis.vercel.app/api/v1/categories/`);
+
+    const viewData = result.data
+
+
+    let table = ``;
+    viewData.forEach((category, indx) => {
+      table += `
+    <div  onclick="alert(${getData(indx)})" >
+    <li class="list-group-item"  > 
+  ${category.name}
+  </li></div>
+    `
+
+    });
+    aplications.innerHTML =
+      `<div class="category">
+    <ul class="list-group"">${table}</ul>
+    </div>
+    `
+
+  } catch (error) {
+    console.log(error);
+  }
+};
+// document.getElementById("hi").click = alert("holaaaaaacjndicdi")
+getCategory();
 getProduct();
+
+// onclick='console.log(${category.id})
