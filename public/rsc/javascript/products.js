@@ -1,19 +1,17 @@
-import axios from 'axios';
-const aplication = document.querySelector('#container-podruct');
-// const aplications = document.querySelector('#container-category');
-var evento = document.getElementById('evento');
+import axios from "axios";
+const aplication = document.querySelector("#container-podruct");
+const aplications = document.querySelector("#container-category");
 
+window.getProduct = async (id = 1) => {
 
-const getProduct = async () => {
   try {
     const result = await axios.get(
-      `https://bsale-erickseis.vercel.app/api/v1/products/` // ${i} valor dinamico?
-
+      `https://bsale-erickseis.vercel.app/api/v1/products/${id}` // ${i} valor dinamico?
     );
     const viewData = result.data;
-    console.log(viewData)
+    console.log(viewData);
     let cards = ``;
-    await viewData.forEach((producCard, indx) => {
+    viewData.forEach((producCard, indx) => {
       cards += `
       
         <div class="card">
@@ -33,83 +31,34 @@ const getProduct = async () => {
       `;
     });
     aplication.innerHTML = cards;
-
-
   } catch (error) {
     console.log(error);
   }
 };
 
-
 const getCategory = async () => {
   try {
     const result = await axios.get(
-      `https://bsale-erickseis.vercel.app/api/v1/categories/`);
+      `https://bsale-erickseis.vercel.app/api/v1/categories/`
+    );
 
-    const viewData = result.data
+    const viewData = result.data;
 
     let table = ``;
-
-     viewData.forEach((category) => {
+    await viewData.forEach((category, indx) => {
       table += `
-
-         <div >
-       <li  key="${category.id}" onclick='categoryClicked(${category.id})' class="list-group-item"  > 
-       ${category.name}
-       </li></div>
-       `
-
+    <div >
+    <li id="lo"  key="${indx}" onclick="window.getProduct(${category.id})"  class="list-group-item"  > ${category.name}
+  </li></div>
+    `;
     });
-    evento.innerHTML =table;
-
-function categoryClicked (id){
-  console.log(id, tipeof(id))
-}
-
+    aplications.innerHTML = `<div class="category">
+    <ul class="list-group"">${table}</ul>
+    </div>
+    `;
   } catch (error) {
     console.log(error);
   }
 };
 getCategory();
 getProduct();
-
-
-
-    //   let table = ``;
-    //   await viewData.forEach((category, indx) => {
-    //     table += `
-    //   <div >
-    //   <li id="lo"  key="${indx}"  class="list-group-item"  > 
-    // ${category.name}
-    // </li></div>
-    //   `
-
-    //   });
-    //   aplications.innerHTML =
-    //     `<div class="category">
-    //   <ul class="list-group"">${table}</ul>
-    //   </div>
-    //   `
-
-
-
-// const h = document.getElementById("lo")
-// h.addEventListener("click", () => {
-//   alert("hola mundo")
-// })
-
-
-// const buttonRight = document.querySelector('#lo');
-// buttonRight.addEventListener('click', e => {
-//   alert("hello");
-// }
-// );
-// const event = function (indx) {
-
-//   console.log(indx)
-// }
-
-
-
-
-// onclick='console.log(${category.id})
