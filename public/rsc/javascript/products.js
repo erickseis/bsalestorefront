@@ -2,7 +2,7 @@ import axios from 'axios';
 const aplication = document.querySelector('#container-podruct');
 const category = document.querySelector('#container-category');
 
-window.getProduct = async (id) => {
+window.getProduct = async (id = 1) => {
   if (id) {
     try {
       const result = await axios.get(
