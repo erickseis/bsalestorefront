@@ -1,6 +1,7 @@
 import axios from 'axios';
 const aplication = document.querySelector('#container-podruct');
 const category = document.querySelector('#container-category');
+import img1 from '../img/botella.jpg'
 
 window.getProduct = async (id = 8) => {
     console.log(id)
@@ -15,7 +16,8 @@ window.getProduct = async (id = 8) => {
             await viewData.forEach((producCard, indx) => {
                 cards += `
           <div class="card">
-             <img src="${producCard.url_image}" class="card-img-top" alt="imagen">
+          
+             <img src="${producCard.url_image != null ? producCard.url_image : img1}" class="card-img-top" alt="imagen">
            <div class="card-body">
              <h5 class="card-title">${producCard.name}</h5>
           <hr/>
@@ -44,7 +46,7 @@ window.getProduct = async (id = 8) => {
             await viewData.forEach((producCard, indx) => {
                 cards += `
           <div class="card">
-             <img src="${producCard.url_image}" class="card-img-top" alt="imagen">
+          <img src="${producCard.url_image != null ? producCard.url_image : img1}" class="card-img-top" alt="imagen">
            <div class="card-body">
              <h5 class="card-title">${producCard.name}</h5>
           <hr/>
@@ -77,7 +79,7 @@ window.getProduct = async (id = 8) => {
                 await viewData.forEach((producCard, indx) => {
                     cards += `
           <div class="card">
-             <img src="${producCard.url_image}" class="card-img-top" alt="imagen">
+          <img src="${producCard.url_image != null ? producCard.url_image : img1}" class="card-img-top" alt="imagen">
            <div class="card-body">
              <h5 class="card-title">${producCard.name}</h5>
           <hr/>
@@ -103,7 +105,7 @@ window.getProduct = async (id = 8) => {
                     type: 'error',
                     title: 'MENSAJE',
                     text: 'Debes introducir caracteres'
-                });
+                }); tname = "pisco"
             }
 
             updateView(tname);
