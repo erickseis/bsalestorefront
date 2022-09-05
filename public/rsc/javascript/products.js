@@ -2,8 +2,8 @@ import axios from 'axios';
 const aplication = document.querySelector('#container-podruct');
 const category = document.querySelector('#container-category');
 
-window.getProduct = async (id) => {
-  if (id < 10) {
+window.getProduct = async (id = 1) => {
+  if (id) {
     try {
       const result = await axios.get(
         `https://bsale-erickseis.vercel.app/api/v1/products/${id}` // ${i} valor dinamico?
@@ -30,7 +30,7 @@ window.getProduct = async (id) => {
     } catch (error) {
       console.log(error);
     }
-  } else if ((id = !id)) {
+  } if (id) {
     async function updateView(tname) {
       console.log(tname);
       try {
@@ -70,14 +70,14 @@ window.getProduct = async (id) => {
           type: 'error',
           title: 'MENSAJE',
           text: 'Debes introducir caracteres'
-        }); tname = "undefined"
+        }); 
       }
 
       updateView(tname);
 
     }
     btn.addEventListener('click', greetingOnClickEvent);
-    updateView();
+
   }
 };
 
