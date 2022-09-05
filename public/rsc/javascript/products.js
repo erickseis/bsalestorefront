@@ -93,7 +93,7 @@ const getCategory = async () => {
     await viewData.forEach((category, indx) => {
       table += `
     <div >
-    <li id="lo"  key="${indx}" onclick="window.getProduct(${category.id})"  class="list-group-item"  > ${category.name}
+    <li id="lo"  key="${category.id}" onclick="window.getProduct(${category.id})"  class="list-group-item"  > ${category.name}
   </li></div>
     `;
     });
