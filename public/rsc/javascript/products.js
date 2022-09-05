@@ -1,6 +1,6 @@
 import axios from 'axios';
 const aplication = document.querySelector('#container-podruct');
-const aplications = document.querySelector('#container-category');
+const category = document.querySelector('#container-category');
 
 window.getProduct = async (id) => {
   if (id) {
@@ -97,7 +97,7 @@ const getCategory = async () => {
   </li></div>
     `;
     });
-    aplications.innerHTML = `<div class="category">
+    category.innerHTML = `<div class="category">
     <ul class="list-group"">${table}</ul>
     </div>
     `;

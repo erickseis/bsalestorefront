@@ -55,6 +55,7 @@ body {
 }
 
 .form-select {
+  margin-top: -10rem;
   margin-left: 2rem;
   display: flex;
   justify-content: center;
@@ -117,9 +118,9 @@ body {
   flex-direction: column;
   align-items: center;
   background-color: rgba(240, 128, 128, 0.507);
-  margin-top: auto;
   text-align: center;
   justify-content: center;
+  margin-top: 12rem;
 }
 footer h5 {
   margin-left: 2rem;
