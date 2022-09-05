@@ -11,7 +11,7 @@ window.getProduct = async (id) => {
       const viewData = result.data;
       console.log(viewData);
       let cards = ``;
-      viewData.forEach((producCard, indx) => {
+      await viewData.forEach((producCard, indx) => {
         cards += `
           <div class="card">
              <img src="${producCard.url_image}" class="card-img-top" alt="imagen">
@@ -41,7 +41,7 @@ window.getProduct = async (id) => {
         const viewData = result.data;
         console.log(viewData);
         let cards = ``;
-        viewData.forEach((producCard, indx) => {
+        await viewData.forEach((producCard, indx) => {
           cards += `
           <div class="card">
              <img src="${producCard.url_image}" class="card-img-top" alt="imagen">
