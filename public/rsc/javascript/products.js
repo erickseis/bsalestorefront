@@ -2,9 +2,38 @@ import axios from 'axios';
 const aplication = document.querySelector('#container-podruct');
 const category = document.querySelector('#container-category');
 
-window.getProduct = async (id = 0) => {
+window.getProduct = async (id = 8) => {
     console.log(id)
-    if (id > 0) {
+    if (id === 8) {
+        try {
+            const result = await axios.get(
+                `https://bsale-erickseis.vercel.app/api/v1/products/` // ${i} valor dinamico?
+            );
+            const viewData = result.data;
+            console.log(viewData);
+            let cards = ``;
+            await viewData.forEach((producCard, indx) => {
+                cards += `
+          <div class="card">
+             <img src="${producCard.url_image}" class="card-img-top" alt="imagen">
+           <div class="card-body">
+             <h5 class="card-title">${producCard.name}</h5>
+          <hr/>
+               <p class="card-text">Price: $ ${producCard.price}</p>
+          <span> 
+              <a class="car-buy" href=""><i class="fa-solid fa-cart-plus"></i></a>
+          </span>
+            </div>
+          </div>   
+        `;
+            });
+            aplication.innerHTML = cards;
+        } catch (error) {
+            console.log(error);
+        }
+    }
+    else if (id >= 1) {
+        console.log(id)
         try {
             const result = await axios.get(
                 `https://bsale-erickseis.vercel.app/api/v1/products/${id}` // ${i} valor dinamico?
@@ -65,6 +94,7 @@ window.getProduct = async (id = 0) => {
                 console.log(error);
             }
         }
+
         function greetingOnClickEvent(e) {
             e.preventDefault();
             const tname = document.getElementById('text').value;
@@ -75,37 +105,11 @@ window.getProduct = async (id = 0) => {
                     text: 'Debes introducir caracteres'
                 });
             }
+
             updateView(tname);
         }
         btn.addEventListener('click', greetingOnClickEvent);
-    }
-    if (id <= 0) {
-        try {
-            const result = await axios.get(
-                `https://bsale-erickseis.vercel.app/api/v1/products` // ${i} valor dinamico?
-            );
-            const viewData = result.data;
-            console.log(viewData);
-            let cards = ``;
-            await viewData.forEach((producCard, indx) => {
-                cards += `
-          <div class="card">
-             <img src="${producCard.url_image}" class="card-img-top" alt="imagen">
-           <div class="card-body">
-             <h5 class="card-title">${producCard.name}</h5>
-          <hr/>
-               <p class="card-text">Price: $ ${producCard.price}</p>
-          <span> 
-              <a class="car-buy" href=""><i class="fa-solid fa-cart-plus"></i></a>
-          </span>
-            </div>
-          </div>   
-        `;
-            });
-            aplication.innerHTML = cards;
-        } catch (error) {
-            console.log(error);
-        }
+
     }
 };
 
