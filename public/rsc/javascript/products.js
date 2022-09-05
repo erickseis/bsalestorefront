@@ -13,7 +13,7 @@ window.getProduct = async (id = null) => {
       const viewData = result.data;
       console.log(viewData);
       let cards = ``;
-      viewData.forEach((producCard, indx) => {
+      await viewData.forEach((producCard, indx) => {
         cards += `
 
           <div class="card">
