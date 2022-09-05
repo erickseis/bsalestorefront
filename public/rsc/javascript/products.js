@@ -2,7 +2,7 @@ import axios from 'axios';
 const aplication = document.querySelector('#container-podruct');
 const aplications = document.querySelector('#container-category');
 
-window.getProduct = async (id = null) => {
+window.getProduct = async (id) => {
   if (id) {
     try {
       const result = await axios.get(
@@ -11,7 +11,7 @@ window.getProduct = async (id = null) => {
       const viewData = result.data;
       console.log(viewData);
       let cards = ``;
-      await viewData.forEach((producCard, indx) => {
+      viewData.forEach((producCard, indx) => {
         cards += `
           <div class="card">
              <img src="${producCard.url_image}" class="card-img-top" alt="imagen">
@@ -41,7 +41,7 @@ window.getProduct = async (id = null) => {
         const viewData = result.data;
         console.log(viewData);
         let cards = ``;
-        await viewData.forEach((producCard, indx) => {
+        viewData.forEach((producCard, indx) => {
           cards += `
           <div class="card">
              <img src="${producCard.url_image}" class="card-img-top" alt="imagen">
@@ -68,17 +68,21 @@ window.getProduct = async (id = null) => {
       if (tname == "") {
         Swal.fire({
           type: 'error',
-          title: 'mensaje',
+          title: 'MENSAJE',
           text: 'Debes introducir caracteres'
         }); tname = "undefined"
       }
 
       updateView(tname);
+
     }
     btn.addEventListener('click', greetingOnClickEvent);
     updateView();
   }
 };
+
+
+
 
 const getCategory = async () => {
   try {
