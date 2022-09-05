@@ -105,5 +105,4 @@ const getCategory = async () => {
     console.log(error);
   }
 };
-getCategory();
-getProduct();
+
