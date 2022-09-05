@@ -10,9 +10,14 @@ body {
   --orange: #ff5b1abd;
   --black: black;
 }
+.navbar-collapse {
+  margin-top: 0.5rem;
+}
 .navbar-brand {
   color: rgba(255, 255, 255, 0.603);
-  margin-left: -2.5rem;
+  margin-left: 11.5rem;
+  position: absolute;
+  margin-top: -3rem;
 }
 .navbar-brand:hover {
   color: white;
@@ -26,9 +31,9 @@ body {
   margin-left: 4rem;
 }
 .form-control {
-  width: 50rem;
+  width: 10rem;
   display: flex;
-  margin-left: 4rem;
+  margin-left: 2.5rem;
 }
 .btn {
   color: white;
@@ -48,7 +53,7 @@ body {
 .car i {
   font-size: 30px;
   color: rgba(255, 255, 255, 0.804);
-  margin-left: 2rem;
+  margin-left: 1rem;
 }
 .car i:hover {
   color: white;
@@ -64,12 +69,12 @@ body {
 }
 
 .category {
-  position: absolute;
-  width: 16rem;
+  position: fixed;
+  width: 30%;
   display: flex;
   flex-direction: column;
   margin-top: 2rem;
-  margin-left: 1.5rem;
+  margin-left: 0.5rem;
 }
 .category ul li {
   list-style: none;
@@ -82,9 +87,9 @@ body {
 }
 .container-podruct {
   margin-top: 2rem;
-  margin-left: 20rem;
+  margin-left: 9rem;
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(1, 1fr);
   gap: 1rem;
 }
 .card {
@@ -141,4 +146,31 @@ footer ul li a {
   font-size: 40px;
   margin-left: 4rem;
   padding-right: 4rem;
+}
+
+/* Media Querys */
+
+@media (min-width: 800px) {
+  .navbar-brand {
+    margin-top: -0.05rem;
+  }
+
+  .form-control {
+    width: 50rem;
+    display: flex;
+    margin-left: 4rem;
+  }
+
+  .car i {
+    margin-left: 2rem;
+  }
+  .category {
+    position: absolute;
+    width: 16rem;
+    margin-left: 1.5rem;
+  }
+  .container-podruct {
+    margin-left: 20rem;
+    grid-template-columns: repeat(4, 1fr);
+  }
 }
