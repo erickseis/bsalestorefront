@@ -81,13 +81,10 @@ window.getProduct = async (id) => {
   }
 };
 
-
-
-
 const getCategory = async () => {
   try {
     const result = await axios.get(
-      `https://bsale-erickseis.vercel.app/api/v1/categories`
+      `https://bsale-erickseis.vercel.app/api/v1/categories/`
     );
 
     const viewData = result.data;
