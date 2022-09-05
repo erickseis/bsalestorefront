@@ -3,7 +3,7 @@ const aplication = document.querySelector('#container-podruct');
 const category = document.querySelector('#container-category');
 
 window.getProduct = async (id) => {
-  if (id) {
+  if (id < 10) {
     try {
       const result = await axios.get(
         `https://bsale-erickseis.vercel.app/api/v1/products/${id}` // ${i} valor dinamico?
