@@ -4,14 +4,12 @@ const category = document.querySelector('#container-category');
 import img1 from '../img/botella.jpg'
 
 window.getProduct = async (id = 8) => {
-    console.log(id)
     if (id === 8) {
         try {
             const result = await axios.get(
                 `https://bsale-erickseis.vercel.app/api/v1/products/` // ${i} valor dinamico?
             );
             const viewData = result.data;
-            console.log(viewData);
             let cards = ``;
             await viewData.forEach((producCard, indx) => {
                 cards += `
@@ -35,13 +33,11 @@ window.getProduct = async (id = 8) => {
         }
     }
     else if (id >= 1) {
-        console.log(id)
         try {
             const result = await axios.get(
                 `https://bsale-erickseis.vercel.app/api/v1/products/${id}` // ${i} valor dinamico?
             );
             const viewData = result.data;
-            console.log(viewData);
             let cards = ``;
             await viewData.forEach((producCard, indx) => {
                 cards += `
@@ -64,7 +60,6 @@ window.getProduct = async (id = 8) => {
         }
     }
     if (id) {
-        console.log(id)
         async function updateView(tname) {
 
             console.log(tname);
@@ -72,7 +67,6 @@ window.getProduct = async (id = 8) => {
                 const result = await axios.get(
                     `https://bsale-erickseis.vercel.app/api/v1/products/name/${tname}` // ${i} valor dinamico?
                 );
-                console.log(result);
                 const viewData = result.data;
                 console.log(viewData);
                 let cards = ``;
