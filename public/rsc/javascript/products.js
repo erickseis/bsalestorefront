@@ -23,7 +23,7 @@ window.getProduct = async (id = 8) => {
           <hr/>
                <p class="card-text">Price: $ ${producCard.price}</p>
           <span> 
-              <a class="car-buy" ><i class="fa-solid fa-cart-plus"></i></a>
+              <a class="car-buy" href=""><i class="fa-solid fa-cart-plus"></i></a>
           </span>
             </div>
           </div>   
@@ -52,7 +52,7 @@ window.getProduct = async (id = 8) => {
           <hr/>
                <p class="card-text">Price: $ ${producCard.price}</p>
           <span> 
-              <a class="car-buy" ><i class="fa-solid fa-cart-plus"></i></a>
+              <a class="car-buy" href=""><i class="fa-solid fa-cart-plus"></i></a>
           </span>
             </div>
           </div>   
@@ -85,7 +85,7 @@ window.getProduct = async (id = 8) => {
           <hr/>
                <p class="card-text">Price: $ ${producCard.price}</p>
           <span> 
-              <a class="car-buy" ><i class="fa-solid fa-cart-plus"></i></a>
+              <a class="car-buy" href=""><i class="fa-solid fa-cart-plus"></i></a>
           </span>
             </div>
           </div>
@@ -105,13 +105,15 @@ window.getProduct = async (id = 8) => {
                     type: 'error',
                     title: 'MENSAJE',
                     text: 'Debes introducir caracteres'
-                }); tname = "pisco"
+                });
             }
-
             updateView(tname);
         }
-        btn.addEventListener('click', greetingOnClickEvent);
+        const btn = document.querySelector('.btn')
 
+        const submit = document.querySelector('#form')
+        btn.addEventListener('click', greetingOnClickEvent);
+        submit.addEventListener('submit', greetingOnClickEvent);
     }
 };
 
