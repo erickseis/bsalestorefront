@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
   <head>
-    <!-- CSS only -->
+    <!-- Define CCS style || 
+import tools to define styles  -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
@@ -21,6 +22,7 @@
     <title>bsale store</title>
   </head>
   <body>
+    <!-- Define Nav Elements -->
     <nav id="navbar" class="navbar navbar-expand-lg">
       <div class="container-fluid">
         <img
@@ -47,12 +49,13 @@
         </div>
       </div>
     </nav>
-
     <br />
-
-    <div class="container-category" id="container-category"></div>
-    <div class="container-podruct" id="container-podruct"></div>
-
+    <!-- define page elements using scripts  -->
+    <article>
+      <div class="container-category" id="container-category"></div>
+      <div class="container-podruct" id="container-podruct"></div>
+    </article>
+<!-- Define elements of Footer -->
     <footer class="footer">
       <ul>
         <li><a href="#container-category">Categoria</a></li>
@@ -74,6 +77,7 @@
       </div>
       <h5>Todos los derechos reservados ©</h5>
     </footer>
+    <!-- Define Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script type="module" src="/public/rsc/javascript/products.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
