@@ -54,11 +54,14 @@ Finalmente tenemos la muestra de como se ve nuestra aplicacion en dispositivos m
 ![](https://i.postimg.cc/tR2LrDqD/completa-telef.jpg)
 
 
+
 ###Funcionamiento
 
-<p align="center">
-  <img src="https://i.postimg.cc/0yW1Hspt/My-Video-1.gif"50%" title="Intro Card" alt="Intro Card">
-</p>
-                    
+[Bsale Store](https://bsalestore.netlify.app/ "Bsale Store")
+
+![](https://media3.giphy.com/media/qVdVjSNVStqIjv8dcP/giphy.gif?cid=790b7611cc4f399b98b3b41b5ebbc9102bf8d4da1fa968b3&rid=giphy.gif&ct=g)
+
+
+
 
 ###Fin
