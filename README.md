@@ -56,6 +56,6 @@ Finalmente tenemos la muestra de como se ve nuestra aplicacion en dispositivos m
 
 ###Funcionamiento
                     
-![](https://i.postimg.cc/DzsF9YPV/servicetonic-api-rest-integration-external-db.png)
+![](https://i.postimg.cc/0yW1Hspt/My-Video-1.gif)
 
 ###Fin
