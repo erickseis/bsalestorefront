@@ -55,7 +55,10 @@ Finalmente tenemos la muestra de como se ve nuestra aplicacion en dispositivos m
 
 
 ###Funcionamiento
+
+<p align="center">
+  <img src="https://i.postimg.cc/0yW1Hspt/My-Video-1.gif"50%" title="Intro Card" alt="Intro Card">
+</p>
                     
-![](https://i.postimg.cc/0yW1Hspt/My-Video-1.gif)
 
 ###Fin
