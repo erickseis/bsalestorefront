@@ -18,10 +18,11 @@
 
 
 
-#Introduccion
+###Introduccion
+
 La Bsale Store, tiene como principio el permitir al cliente realizar compras a traves de una interfaz intuitiva y atractiva, en ella podemos adquirir el producto de nuestra eleccion en el momento que lo necesitemos, a su vez que puede ser ejecutada tanto en celulares como en dispositivos de escritorio. 
 
-##Uso de la Bsale Store 
+###Uso de la Bsale Store 
 
 Para comenzar a ocupar la Bsale Store, puedes hacerlo a traves del siguiente enlace:
 
