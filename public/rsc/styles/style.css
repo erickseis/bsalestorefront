@@ -1,3 +1,4 @@
+/* Define styles general */
 * {
   box-sizing: border-box;
 }
@@ -10,6 +11,8 @@ body {
   --orange: #ff5b1abd;
   --black: black;
 }
+
+/* define styles of navbar */
 .navbar-collapse {
   margin-top: 0.5rem;
 }
@@ -67,7 +70,7 @@ body {
   align-items: center;
   width: 250px;
 }
-
+/* define styles of category selection */
 .category {
   position: fixed;
   width: 30%;
@@ -85,6 +88,7 @@ body {
 .category ul li:hover {
   background-color: var(--orange);
 }
+/* define styles al products */
 .container-podruct {
   margin-top: 2rem;
   margin-left: 9rem;
@@ -117,7 +121,7 @@ body {
   align-items: center;
   color: var(--orange);
 }
-
+/* define styles of the footer */
 .footer {
   display: flex;
   flex-direction: column;
@@ -148,7 +152,7 @@ footer ul li a {
   padding-right: 4rem;
 }
 
-/* Media Querys */
+/* Define of the Media Querys */
 
 @media (min-width: 800px) {
   .navbar-brand {
